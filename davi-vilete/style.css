@@ -1,0 +1,209 @@
+/* ===================================================
+   TRABALHO AVALIATIVO P2 - Fundamentos de Programação para Web
+   Estilização CSS Externa - Layout Suave e Harmonizado
+   =================================================== */
+
+/* Variáveis de cores suaves (tema padrão com fundo lightgray) */
+:root {
+    --bg-card: #f9fafb;
+    --bg-nav: #ffffff;
+    --border-color: #d1d5db;
+    --accent-soft: #eef2f7;
+    --text-primary: #1f2937;
+    --text-muted: #4b5563;
+    --title-color: #2557a7;
+    --first-letter-color: #c0392b;
+    --link-color: #2557a7;
+    --link-hover-bg: #e8effa;
+    --shadow-soft: 0 4px 14px rgba(31, 41, 55, 0.07);
+}
+
+/* Subcores suaves para os temas escolhidos via JavaScript */
+body.tema-blue {
+    --bg-card: #f8fbff;
+    --bg-nav: #eff6ff;
+    --border-color: #bfdbfe;
+    --accent-soft: #e0edff;
+    --title-color: #1d4ed8;
+    --link-color: #1e40af;
+    --link-hover-bg: #dbeafe;
+}
+
+body.tema-red {
+    --bg-card: #fff9f9;
+    --bg-nav: #fff1f1;
+    --border-color: #f5c2c7;
+    --accent-soft: #fce8e8;
+    --title-color: #2b4c7e;
+    --link-color: #9b2c2c;
+    --link-hover-bg: #fad7d7;
+}
+
+body.tema-green {
+    --bg-card: #f7fef9;
+    --bg-nav: #ecfdf5;
+    --border-color: #bbf7d0;
+    --accent-soft: #e2f9ea;
+    --title-color: #1e567a;
+    --link-color: #166534;
+    --link-hover-bg: #d1fae5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Seletor de elemento: body (fundo padrão lightgray) */
+body {
+    background-color: lightgray;
+    color: var(--text-primary);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 32px 20px 40px 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Cabeçalho */
+#inicio {
+    max-width: 820px;
+    margin: 0 auto 28px auto;
+}
+
+/* Seletor de ID: título principal em azul, centralizado, Arial e negrito */
+#titulo-principal {
+    color: var(--title-color);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2.1rem;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+}
+
+/* Seletor de classe: subtítulo em maiúsculas */
+.subtitulo {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin: 0 0 22px 0;
+}
+
+/* Seletor de ID: barra de navegação horizontal bem espaçada */
+#menu-navegacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    background-color: var(--bg-nav);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 12px 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Formatação geral dos links */
+a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Pseudoclasse :hover - exibe sublinhado ao passar o mouse */
+a:hover {
+    text-decoration: underline;
+    background-color: var(--link-hover-bg);
+}
+
+/* Pseudoclasse :visited - cor roxa para links visitados */
+a:visited {
+    color: purple;
+}
+
+/* Seletor de classe: contêiner principal com separação clara entre seções */
+.container {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Cartões separados para apresentação (#sobre) e minicursos (#minicursos) */
+#sobre,
+#minicursos {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Formatação obrigatória do parágrafo de apresentação */
+p.apresentacao {
+    text-align: justify;
+    text-indent: 25px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 16px;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Pseudo-elemento ::first-letter em vermelho */
+p.apresentacao::first-letter {
+    color: var(--first-letter-color);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Título da seção de minicursos */
+#minicursos h3 {
+    margin: 0 0 18px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+    color: var(--title-color);
+    font-size: 1.25rem;
+}
+
+/* Seletor de elemento para lista com marcadores quadrados (square) */
+ul {
+    list-style-type: square;
+    margin: 0;
+    padding-left: 26px;
+}
+
+.lista-minicursos li {
+    margin: 12px 0;
+    padding: 10px 14px;
+    background-color: var(--accent-soft);
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+/* Seletor de ID: rodapé */
+#contato {
+    max-width: 820px;
+    margin: 28px auto 0 auto;
+    padding: 16px 20px;
+    text-align: center;
+    background-color: var(--bg-nav);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow-soft);
+}
+
+.rodape-texto {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-muted);
+}
